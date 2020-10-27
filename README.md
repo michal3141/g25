@@ -87,6 +87,16 @@ At least 98% of Polish and Slovakian ancestry together!:
 	------------------------------------------------
 	Fit error: 0.012895470113353954
 
+At least 98% of Polish and Slovakian ancestry together with additional penalty:
+
+	(base) michal3141@Lenovo:~/admixture/global25/g25$ python mixture.py Global25_PCA_modern_scaled.txt michal3141.txt 'Polish+Slovakian>=0.98' pen=0.01
+	-------------- ANCESTRY BREAKDOWN: -------------
+	Polish                                            --->	52.074%
+	Slovakian                                         --->	45.926%
+	Ket                                               --->	1.408%
+	Russian_Kostroma                                  --->	0.592%
+	------------------------------------------------
+	Fit error: 0.014263306424617072
 
 
 
