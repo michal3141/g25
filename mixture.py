@@ -39,11 +39,13 @@ def main():
     pop2index = {}
     pop2percent = []
     penalty = 0.
+    noise_penalty = 0.
     indiv = ''
     threshold = .00001
     constraint_dict = {}
     operator_dict = {}
     pop_dict = defaultdict(list)
+    nonzeros = 0
 
     sheetfile = sys.argv[1]
     indivfile = sys.argv[2]
@@ -61,6 +63,8 @@ def main():
                 penalty = pen
             else:
                 raise NotImplementedError("Penalizing individuals or populations is not implemented yet.")
+        elif pop_selector.startswith('count'):
+            nonzeros = int(pen)
         else:
             constraint_dict[pop_selector] = pen
             operator_dict[pop_selector] = op
@@ -105,6 +109,11 @@ def main():
             constraints.append(sum_expr >= pen)
         elif op == '<=':
             constraints.append(sum_expr <= pen)
+
+
+    if nonzeros > 0:
+        binary = cp.Variable(M.shape[1], boolean=True)
+        constraints += [x - binary <= 0., cp.sum(binary) == nonzeros]
 
     prob = cp.Problem(cp.Minimize(cost), constraints)
 #    prob.solve(verbose=True)
