@@ -105,7 +105,7 @@ The run below took about 40 seconds on my machine.
 You may experiment with this option but remember that the running time
 grows exponentially with the number of populations/individuals in your reference sheet.
 
-	(base) michal3141@Lenovo:~/admixture/global25/g25$ time python mixture.py Global25_PCA_pop_averages_scaled.txt michal3141.txt count=2
+	(base) michal3141@Lenovo:~/admixture/global25/g25$ python mixture.py Global25_PCA_pop_averages_scaled.txt michal3141.txt count=2
 	-------------- ANCESTRY BREAKDOWN: -------------
 	Baltic_EST_IA                                     --->	69.951%
 	UKR_Cimmerian_o                                   --->	30.049%
