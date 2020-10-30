@@ -98,6 +98,21 @@ At least 98% of Polish and Slovakian ancestry together with additional penalty:
 	------------------------------------------------
 	Fit error: 0.014263306424617072
 
+Run with the limited number of populations with non-zero admix.
+Example below is using a sheet with all population averages from Davidski and we
+demand to have at most 2 populations (count=2) with non-zero admix!
+The run below took about 40 seconds on my machine.
+You may experiment with this option but remember that the running time
+grows exponentially with the number of populations/individuals in your reference sheet.
+
+	(base) michal3141@Lenovo:~/admixture/global25/g25$ time python mixture.py Global25_PCA_pop_averages_scaled.txt michal3141.txt count=2
+	-------------- ANCESTRY BREAKDOWN: -------------
+	Baltic_EST_IA                                     --->	69.951%
+	UKR_Cimmerian_o                                   --->	30.049%
+	------------------------------------------------
+	Fit error: 0.018940013697675166
+
+
 
 
 
