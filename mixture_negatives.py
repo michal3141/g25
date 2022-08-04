@@ -142,8 +142,8 @@ def main():
 #        nearest_to_avg = find_nearest_to_avg(M, avgpop, indiv2index, poplist)
 #        cost += pen*cp.norm2(M @ x - nearest_to_avg)**2
 
-    constraints = [cp.sum(x) == 1, 0 <= x]
-#    constraints = [cp.sum(x) == 1]
+#    constraints = [cp.sum(x) == 1, 0 <= x]
+    constraints = [cp.sum(x) == 1]
 
     for pop_selector, pen in constraint_dict.items():
         op = operator_dict[pop_selector]
