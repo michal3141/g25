@@ -170,7 +170,7 @@ def main():
 #                print(indiv2index[indiv])
         #constraints += [x - binary <= 0., cp.sum(binary[0:2]) >= 1]
 #        constraints += [x - binary <= 0., cp.sum([cp.minimum(cp.sum(binary[[indiv2index[indiv] for indiv in indiv_list]]), 1) for indiv_list in pop_dict.values()]) == nonzeros]
-        constraints += [x - binary <= 0., cp.sum(binary) == nonzeros]
+        constraints += [cp.abs(x) - binary <= 0., cp.sum(binary) == nonzeros]
 
 #    print(pop_dict)
 #    print(indiv2index)
